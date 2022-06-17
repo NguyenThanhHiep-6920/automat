@@ -17,11 +17,11 @@ function App() {
       <div className="app">
       <Navigation/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="automat" element={<Automat initialData={initialData}/>}/>
-        <Route path="documents" element={<Documents/>}/>
-        <Route path="templates/turnstile" element={<Turnstile/>}/>
-        <Route path="contactUs" element={<ContactUs/>}/>
+        <Route path="automat" element={<Home/>}/>
+        <Route path="automat/automat" element={<Automat initialData={initialData}/>}/>
+        <Route path="automat/documents" element={<Documents/>}/>
+        <Route path="automat/templates/turnstile" element={<Turnstile/>}/>
+        <Route path="automat/contactUs" element={<ContactUs/>}/>
       </Routes>
       </div>
     </BrowserRouter>
