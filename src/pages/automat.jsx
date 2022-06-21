@@ -18,6 +18,10 @@ function Automat(props){
     // const [textSVG, setTextSVG]=useState("");
     //const [files,setFiles]= useState("");
     
+    /**
+     * Function that handles change of the automaton's name
+     * @param {string} input - name of automaton
+     */
     const HandleNameOfAutomaton=(input)=>{
         const newGraph={
             'points':[...graphData.points],
@@ -28,7 +32,10 @@ function Automat(props){
         newGraph.names[0].automat=input;
         setGraphData(newGraph);
     }
-
+    /**
+     * Function that removes a point
+     * @param {*} removedId - index of removed point
+     */
     const OnRemovePoint= (removedId)=>{
         const newGraph={
             'points': graphData.points.filter(point=>(point.id!==removedId)),
@@ -38,6 +45,10 @@ function Automat(props){
         }
         setGraphData(newGraph);
     }
+    /**
+     * Function that removes a edge
+     * @param {*} removedId - indentifition of removed edge
+     */
     const OnRemoveEdge=(removedId)=>{
         const newGraph={
             'points':[...graphData.points],
@@ -47,6 +58,10 @@ function Automat(props){
         }
         setGraphData(newGraph);
     }
+    /**
+     * Function that removes a symbol
+     * @param {*} removedId - indentifition of removed symbol
+     */
     const OnRemoveSymbol=(removedId)=>{
         const newGraph={
             'points':[...graphData.points],
@@ -56,7 +71,11 @@ function Automat(props){
         }
         setGraphData(newGraph);
     }
-   
+    /**
+     * Function that handles change of a point
+     * @param {*} p_point - changed point 
+     * @param {string} input - input with formula 'X Y State Meaning'
+     */
     const HandlePointChange=(p_point, input)=>{
         const px=Number(input.split(" ")[0]);
         const py=Number(input.split(" ")[1]);
@@ -78,6 +97,11 @@ function Automat(props){
             setGraphData(newGraph);
         }
     }
+    /**
+     * Function that handles change of an edge
+     * @param {*} edgeId - changed edge's identifition
+     * @param {string} input - input with formula 'startIndex endIndex symbols'
+     */
     const HandleEdgeChange=(edgeId, input)=>{
         const startId= Number(input.split(" ")[0]);
         const endId= Number(input.split(" ")[1]);
@@ -105,6 +129,11 @@ function Automat(props){
             }
         }
     }
+    /**
+     * Function that handles change of a symbol
+     * @param {*} symbolId - changed symbol's identifition
+     * @param {string} input - input with formula 'symbolName Meaning'
+     */
     const HandleSymbolChange=(symbolId,input)=>{
         const symbolName=input.split(" ")[0];
         if(symbolName!==undefined&&symbolName!==""){
@@ -129,7 +158,10 @@ function Automat(props){
             setGraphData(newGraph);
         }
     }
-
+    /**
+     * Function that handles adding of a new point
+     * @param {*} label - Changed point's type
+     */
     const HandleNewPoint=(label)=>{
         let id=0;
         if(graphData.points.length!==0){
@@ -147,6 +179,10 @@ function Automat(props){
         newGraph.points.push(newPoint);
         setGraphData(newGraph);
     }
+     /**
+     * Function that handles adding of an new edge
+     * @param {string} input - input with formula 'StartIndex EndIndex Symbols'
+     */
     const HandleNewEdge=(input)=>{
         let id=0;
         if(graphData.edges.length!==0){
@@ -185,6 +221,9 @@ function Automat(props){
             }
         }
     }
+     /**
+     * Function that handles adding of a new symbol
+     */
     const HandleNewSymbol=()=>{
         let id=0;
         if(graphData.symbols.length!==0){
@@ -202,7 +241,10 @@ function Automat(props){
         newGraph.symbols.push(newSymbol);
         setGraphData(newGraph);
     }
-    
+    /**
+     * function that download content as a html file 
+     * @param {*} content - dowloaded content
+     */
     const Download=(content)=>{
         const a= new Blob([content],{type:'text/plain;charset=utf-8' });
         saveAs(a,'image.html'); 
@@ -211,6 +253,10 @@ function Automat(props){
     //     console.log(document.getElementById("svg")); 
     //     setTextSVG(document.getElementById("svg").innerHTML) 
     // } 
+    /**
+     * function that imports a json file and set it as the initial data
+     * @param {*} e - event
+     */
     const ImportData=(e)=>{
         const fileReader= new FileReader();
         fileReader.readAsText(e.target.files[0],"UTF-8");
@@ -258,7 +304,7 @@ function Automat(props){
                     <br />
                     <br/>
                     <label>Import file.json: 
-                        <input type="file" accept=".json" onChange={ImportData}/>
+                        <input type="file" accept=".json" onChange={(e)=>ImportData(e)}/>
                     </label>
                 </div>
                 {/* <button onClick={exportSVG}>Export svg</button>

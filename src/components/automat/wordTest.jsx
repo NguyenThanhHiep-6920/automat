@@ -8,6 +8,12 @@ import {useState} from 'react'
 const WordTest=(props)=>{
     const graphData=props.graphData;
     const [conclusion,setConclusion]=useState("");
+    /**
+     * function that returns the next index when we go from a state(point) following a symbol
+     * @param {*} startId - index of start state(point)
+     * @param {*} symbol - symbol that is used
+     * @returns index number
+     */
     const NextId=(startId,symbol)=>{
         let result="";
         let isExisted=false;
@@ -22,6 +28,10 @@ const WordTest=(props)=>{
         }
         return result;
     }
+    /**
+     * function that handle word test
+     * @param {*} input - tested word
+     */
     const HandleWordTest=(input)=>{
         if(input!==undefined&&input!==""){
             const word=input;

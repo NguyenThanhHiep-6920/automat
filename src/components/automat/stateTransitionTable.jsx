@@ -7,6 +7,12 @@ import {Table} from 'react-bootstrap'
  */
 const StateTransitionTable=(props)=>{
     const graphData=props.graphData;
+    /**
+     * function that returns the next states when we go from a state(point) following a symbol
+     * @param {*} startId - index of start state(point)
+     * @param {*} symbol - symbol that is used
+     * @returns string of states with formula 'State1,State2,State3,...'
+     */
     const NextStates=(startId,symbol)=>{
         let nextStates="";
         let isExisted=false;
@@ -26,6 +32,11 @@ const StateTransitionTable=(props)=>{
         }
         
     }
+    /**
+     * function that returns a point's state in state transition table
+     * @param {*} point - point
+     * @returns state by string
+     */
     const State=(point)=>{
         if(point.label==='initialState'){
             return "->"+point.state;
