@@ -1,3 +1,14 @@
+/**
+ * Render an representation of an edge
+ * @param {*} props 
+ * @param {*} props.points - Set of graph's points
+ * @param {*} props.startId - Edge's start index
+ * @param {*} props.endId - Edge's end index
+ * @param {string} props.label - Edge's type
+ * @param {string} props.symbols - Symbols that are represented by this edge
+ * @returns Elements in a <svg> tag like <line>,<elipse>,<polygon>,<text>,...
+ */
+
 const Edge=(props)=>{
     const points=props.points;
     const startPoint= points.filter(point=>(point.id===props.startId))[0];
@@ -7,9 +18,12 @@ const Edge=(props)=>{
 
     const a=startPoint;
     const b=endPoint;
+    //radius of the node's circle
     const radius=20;
-    const h=10; //vyska trojuhelnik sipky
+    //height triangle of the arrow
+    const h=10; 
     const length_ab = Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);
+    //common 
     if(label==='obecna'){
         const x1=a.x+(b.x-a.x)*(radius/length_ab);
         const y1=a.y+(b.y-a.y)*(radius/length_ab);
@@ -37,8 +51,8 @@ const Edge=(props)=>{
             <text x={(a.x+b.x)/2} y={(a.y+b.y)/2} fill="red">{symbols}</text>
         </>
     }
+    //loop
     if(label==='smycka'){
-        //loop
         return<>
             <ellipse cx={a.x} cy={a.y-radius} rx={2*radius} ry={radius} stroke="black" strokeWidth="2" fill="none"/>
             <polygon 
@@ -52,6 +66,7 @@ const Edge=(props)=>{
             <text x={a.x-radius} y={a.y-2*radius} fill="red">{symbols}</text>
         </>
     }
+    //curve
     if(label==='krivka'){
         const MidpointX=(a.x+b.x)/2;
         const MidpointY=(a.y+b.y)/2;

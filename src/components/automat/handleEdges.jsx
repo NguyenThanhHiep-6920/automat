@@ -1,5 +1,13 @@
 import {Accordion,CloseButton,Table} from 'react-bootstrap'
-
+/**
+ * Render and control edges
+ * @param {*} props 
+ * @param {*} props.edges - Set of graph's edges
+ * @param {*} props.onRemoveEdge - Function that removes an edge
+ * @param {*} props.handleEdgeChange - Function that handles change of an edge
+ * @param {*} props.handleNewEdge - Function that handles adding of an new edge
+ * @returns component <Table> that obtains edges with its mutable information, <input> tag for adding of an new edge, component <Arcodinon> for comments
+ */
 const HandleEdges=(props)=>{
     const edges=props.edges;
     //o ham HandleEdgeChange, symbols la bat buoc, neu k xay ra loi o <StateTransitionTable>

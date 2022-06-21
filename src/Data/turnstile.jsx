@@ -1,3 +1,7 @@
+/**
+ * Render graph's initial data for turnstile page
+ * @returns library
+ */
 const turnstile={
     "points":[
         {"id":0,"x":100,"y":300,"state":"q0","label":"initialState","meaning":"Locked"},

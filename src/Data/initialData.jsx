@@ -1,3 +1,7 @@
+/**
+ * Render graph's initial data for automat page
+ * @returns library
+ */
 const initialData={
     'points':[
         {'id':0,'x':300,'y':400, 'state':'q0', 'label':'initialState', 'meaning':'meaning of q0'},

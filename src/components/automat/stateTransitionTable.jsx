@@ -1,5 +1,10 @@
 import {Table} from 'react-bootstrap'
-
+/**
+ * Render state transition table of the automaton
+ * @param {*} props 
+ * @param {*} props.graphData - Graph's data
+ * @returns <Table> component
+ */
 const StateTransitionTable=(props)=>{
     const graphData=props.graphData;
     const NextStates=(startId,symbol)=>{

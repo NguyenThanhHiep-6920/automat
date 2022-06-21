@@ -1,3 +1,12 @@
+/**
+ * Render an representation of the graph's information in the graph
+ * @param {*} props 
+ * @param {*} props.points - Set of graph's points
+ * @param {*} props.names - Set of graph's names
+ * @param {*} props.symbols - Set of all symbols in the graph
+ * @param {*} props.width - Graph's width
+ * @returns Elements in <svg> tag that represent automaton's name, states, symbols
+ */
 const GraphInf=(props)=>{
     const points=props.points;
     const names=props.names;

@@ -1,5 +1,11 @@
 import Edge from './edge'
-
+/**
+ * Render an representation of the set of edges
+ * @param {*} props 
+ * @param {*} props.edges - Set of graph's edges
+ * @param {*} props.points - Set of graph's points
+ * @returns List of the <Edge> components- representation of the edges
+ */
 const Edges=(props)=>{
     const edges=props.edges;
     const points=props.points;

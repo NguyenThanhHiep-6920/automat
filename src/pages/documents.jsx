@@ -3,7 +3,11 @@ import graph2 from "../images/graph2.png"
 import tabulka1 from "../images/tabulka1.png"
 import tabulka2 from "../images/tabulka2.png"
 import {Row,Col} from 'react-bootstrap'
-
+/**
+ * Render page about automaton's document
+ * @param {*} props 
+ * @returns <p> tag
+ */
 const Documents=(props)=>{
     return(
         <p style={{paddingLeft: "10em"}}>

@@ -1,7 +1,12 @@
 import Edges from './edges'
 import Points from './points'
 import GraphInf from './graphInf';
-
+/**
+ * Render an representation of the graph with a graph's data
+ * @param {*} props 
+ * @param {*} props.graphData - Graph's data
+ * @returns A <svg> tag that obtains components <Edges>,<Points> and <GraphInf> and graph's borders
+ */
 const Graph=(props)=>{
     const graphData=props.graphData;
     const width=1050;

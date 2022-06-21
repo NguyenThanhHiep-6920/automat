@@ -1,5 +1,10 @@
 import {useState} from 'react'
-
+/**
+ * Render word test of the automaton
+ * @param {*} props 
+ * @param {*} props.graphData - Graph's data
+ * @returns <input> tag for tested word, <p> tag for show the result
+ */
 const WordTest=(props)=>{
     const graphData=props.graphData;
     const [conclusion,setConclusion]=useState("");

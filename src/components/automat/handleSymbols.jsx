@@ -1,5 +1,13 @@
 import {CloseButton,Table} from 'react-bootstrap'
-
+/**
+ * Render and control symbols
+ * @param {*} props 
+ * @param {*} props.symbols - Set of graph's symbols
+ * @param {*} props.onRemoveSymbol - Function that removes a symbol
+ * @param {*} props.handlePointSymbol - Function that handles change of a symbol
+ * @param {*} props.handleNewSymbol - Function that handles adding of a new symbol
+ * @returns component <Table> that obtains symbols with its mutable information, <button> tag for adding of a new symbol
+ */
 const HandleSymbols=(props)=>{
     const symbols=props.symbols;
     return (

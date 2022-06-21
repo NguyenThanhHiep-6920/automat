@@ -1,5 +1,13 @@
 import {CloseButton,Table} from 'react-bootstrap'
-
+/**
+ * Render and control points
+ * @param {*} props 
+ * @param {*} props.points - Set of graph's points
+ * @param {*} props.onRemovePoint - Function that removes a point
+ * @param {*} props.handlePointChange - Function that handles change of a point
+ * @param {*} props.handleNewPoint - Function that handles adding of a new point
+ * @returns component <Table> that obtains points with its mutable information, <select> tag for adding of a new point
+ */
 const HandlePoints=(props)=>{
     
     const points=props.points;

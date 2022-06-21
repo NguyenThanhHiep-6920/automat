@@ -1,3 +1,8 @@
+/**
+ * Render application's instruction and structure
+ * @param {*} props 
+ * @returns <p> tag
+ */
 const Home=(props)=>{
     return(
         <p style={{paddingLeft: "10em"}}>  

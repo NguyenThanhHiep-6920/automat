@@ -6,7 +6,12 @@ import WordTest from '../components/automat/wordTest';
 import StateTransitionTable from '../components/automat/stateTransitionTable';
 import Handle from '../components/automat/handle';
 
-
+/**
+ * Render the automaton's editor and automaton's representation-graph
+ * @param {*} props 
+ * @param {*} props.initialData - Graph's initial data
+ * @returns components: <Handle>,<Graph>,<WordTest>,<StateTransitionTable>, <button> tag for downloading and <input> tag for importing
+ */
 function Automat(props){
     const initialData=props.initialData;
     const [graphData,setGraphData]=useState(initialData);

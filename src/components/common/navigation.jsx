@@ -1,6 +1,11 @@
 import {Navbar,Nav,Container, NavDropdown} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import logo from './logo.svg';
+/**
+ * Render navigation bar with using Link component from library react-router-dom
+ * @param {*} props 
+ * @returns <Navbar> component
+ */
 const Navigation=(props)=>{
     return(
         <Navbar expend="lg" bg="dark" variant="dark" sticky="top">

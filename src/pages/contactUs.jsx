@@ -1,6 +1,10 @@
-import {Card,Row,Col, CardGroup} from  'react-bootstrap'
+import {Card,Row} from  'react-bootstrap'
 import avatar from '../images/avatar.jpg'
-
+/**
+ * Render page about contact infomation
+ * @param {*} props 
+ * @returns <Card> components
+ */
 const ContactUs=(props)=>{
     return(
         <>
